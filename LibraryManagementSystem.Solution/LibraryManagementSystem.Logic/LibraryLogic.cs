@@ -6,9 +6,9 @@ namespace LibraryManagementSystem.Logic
 {
     public class LibraryLogic
     {
-        private readonly LibraryData _libraryData;
+        private readonly ILibraryData _libraryData;
 
-        public LibraryLogic(LibraryData libraryData)
+        public LibraryLogic(ILibraryData libraryData)
         {
             _libraryData = libraryData;
         }

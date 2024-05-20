@@ -27,11 +27,18 @@ namespace LibraryManagementSystem.Data
         public string Description { get; set; }
     }
 
-    public class LibraryData
+    public class LibraryData : ILibraryData
     {
         public List<User> Users { get; set; } = new List<User>();
         public Dictionary<int, CatalogItem> Catalog { get; set; } = new Dictionary<int, CatalogItem>();
         public ProcessState CurrentState { get; set; }
         public List<Event> Events { get; set; } = new List<Event>();
+
+        // Constructor público para permitir la inyección de dependencias
+        public LibraryData()
+        {
+            CurrentState = new ProcessState(); // Inicializar el estado actual para evitar valores nulos
+        }
     }
+
 }
