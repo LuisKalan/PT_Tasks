@@ -17,8 +17,9 @@ namespace LibraryManagementSystem.Data
 
         public IQueryable<T> GetAll()
         {
-            var query = from item in _table
-                        select item;
+            //var query = from item in _table
+            //            select item;
+            var query = _table.Select(item => item);
             return query;
         }
 
